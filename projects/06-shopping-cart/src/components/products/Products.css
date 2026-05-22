@@ -1,47 +1,112 @@
 .products {
-  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 24px 0 80px;
+  width: 100%;
 }
 
 .products ul {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(
-      200px,
-      1fr
-    )
-  );
-  gap: 1rem;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  list-style: none;
+  margin: 0;
+  max-width: 1400px;
+  padding: 0;
+  width: 100%;
 }
 
 .products li {
+  background: #161616;
+  border: 1px solid #262626;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, .1);
-  border-radius: 4px;
-  background: #111;
-  color: #fff;
-  padding: 1rem;
+  overflow: hidden;
+  transition:
+    transform .25s ease,
+    border .25s ease,
+    box-shadow .25s ease;
 }
 
-.products h3 {
-  margin: 0;
-}
-
-.products span {
-  font-size: 1rem;
-  opacity: .9;
+.products li:hover {
+  border-color: #09f;
+  box-shadow: 0 16px 40px rgba(0, 153, 255, 0.12);
+  transform: translateY(-6px);
 }
 
 .products img {
-  border-radius: 4px;
-  width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/10;
+  background: #fff;
   display: block;
   object-fit: cover;
-  background: #fff;
+  width: 100%;
+}
+
+.products li div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+}
+
+.products strong {
+  color: #f5f5f5;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.products span {
+  color: #b3b3b3;
+  font-size: 15px;
+}
+
+.products li footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 0 18px 18px;
+}
+
+.products button {
+  align-items: center;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  height: 46px;
+  justify-content: center;
+  transition:
+    transform .2s ease,
+    filter .2s ease;
+  width: 60px;
+
+  flex-shrink: 0;
+}
+
+.products button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.08);
+}
+
+.products button:active {
+  transform: scale(.96);
+}
+
+@media (max-width: 768px) {
+  .products {
+    padding-bottom: 120px;
+  }
+
+  .products ul {
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .products strong {
+    font-size: 15px;
+  }
 }
