@@ -1,53 +1,103 @@
 .footer {
-  backdrop-filter: blur(14px);
-  background: rgba(18, 18, 18, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  bottom: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-  left: 20px;
-  padding: 14px 20px;
-  position: fixed;
-  z-index: 999;
+  margin-top: 80px;
+  padding-top: 60px;
+
+  border-top: 1px solid #cfc8bc;
 }
 
-.footer h4,
-.footer h5 {
-  align-items: center;
-  color: #f5f5f5;
+.footer-content {
   display: flex;
-  font-weight: 500;
-  margin: 0;
+  justify-content: space-between;
+  gap: 80px;
 }
 
-.footer h4 {
-  font-size: 14px;
-  gap: 6px;
-  margin-bottom: 4px;
+.footer-brand {
+  max-width: 350px;
 }
 
-.footer h5 {
-  color: #a1a1aa;
-  font-size: 13px;
-  font-weight: 400;
+.footer-brand h2 {
+  margin-bottom: 20px;
+
+  font-size: 32px;
+  color: #314236;
 }
 
-.footer span {
-  color: #09f;
-  font-weight: 700;
+.footer-brand p {
+  color: #6d6d6d;
+  line-height: 1.7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #dce5dc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #314236;
+
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  gap: 70px;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+  color: #314236;
+}
+
+.footer-links a {
+  color: #6d6d6d;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding: 25px 0;
+
+  border-top: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #777;
 }
 
 @media (max-width: 768px) {
-  .footer {
-    border-radius: 16px;
-    bottom: 12px;
-    left: 12px;
-    padding: 12px 16px;
-    right: 12px;
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 20px;
   }
 
-  .footer h4,
-  .footer h5 {
-    font-size: 12px;
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
   }
 }
