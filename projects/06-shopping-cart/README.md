@@ -137,31 +137,33 @@ La aplicación adapta automáticamente su interfaz:
 
 ## ⚙️ Instalación
 
-Clonar el repositorio:
+### 📂 Repositorio
+
+Este proyecto forma parte del repositorio **Projects-React**:
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/MLucasDelgado/Projects-React.git
 ```
 
-Entrar al proyecto:
+### 📁 Acceder al proyecto
 
 ```bash
-cd shopping-cart
+cd Projects-React/projects/06-shopping-cart
 ```
 
-Instalar dependencias:
+### 📦 Instalar dependencias
 
 ```bash
 npm install
 ```
 
-Ejecutar en desarrollo:
+### 🚀 Ejecutar en desarrollo
 
 ```bash
 npm run dev
 ```
 
-Generar build de producción:
+### 🏗️ Generar build de producción
 
 ```bash
 npm run build
