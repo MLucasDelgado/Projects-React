@@ -19,21 +19,29 @@ function useCartReducer () {
         })
     }
 
+    const decreaseQuantity = (product) => {
+        disptach({
+            type: 'DECREASE_QUANTITY',
+            payload: product
+        })
+    }
+   
     const clearCart = () => {
         disptach({
             type: 'CLEAR_CART'
         })
     }
-    return { state, addToCart, removeFromCart, clearCart}
+    return { state, addToCart, removeFromCart, decreaseQuantity,  clearCart}
 }
 
 export const CartProvider = ({ children }) => {
-   const {state, addToCart, removeFromCart, clearCart} = useCartReducer()
+   const {state, addToCart, removeFromCart, decreaseQuantity, clearCart} = useCartReducer()
     return (
         <CartContext.Provider value={{
             cart: state,
             addToCart,
             removeFromCart,
+            decreaseQuantity,
             clearCart
         }}>
             {children}
