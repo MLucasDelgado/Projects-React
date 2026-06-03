@@ -1,55 +1,102 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
-#root {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  width: 100%;
+:root {
+  --bg: #d9dbd4;
+  --surface: #f8f5ef;
+  --primary: #314236;
+  --text: #1f2933;
+  --border: #ddd7cd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  background: var(--bg);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+}
+
+#root {
+  width: 100%;
   min-height: 100vh;
 }
 
+/* Layout principal */
+
+.app {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+
+  align-items: start;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Header ocupa todo el ancho */
+
+.header {
+  grid-column: 1 / -1;
+}
+
+/* Sidebar carrito */
+
+.cart {
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+}
+
+/* Reset */
+
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  border: none;
+  outline: none;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 ul {
   list-style: none;
-  padding: 0;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+@media (max-width: 992px) {
+  .app {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .main-content {
+    padding: 0 20px;
+  }
+
+  .cart {
+    position: static;
+    max-height: none;
+    width: 100%;
+  }
+}
+
