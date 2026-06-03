@@ -16,7 +16,10 @@ export function Products({ products }) {
           const isProductInCart = checkProductInCart(product);
           return (
             <li key={product.id}>
+              <button className="favorite-btn">♡</button>
+
               <img src={product.thumbnail} alt={product.title} />
+
               <div>
                 <strong>{product.title}</strong>
                 <span>${product.price}</span>
@@ -24,14 +27,24 @@ export function Products({ products }) {
 
               <footer>
                 <button
-                  style={{ backgroundColor: isProductInCart ? "red" : "#09f" }}
+                  className={isProductInCart ? "remove-btn" : "add-btn"}
                   onClick={() =>
                     isProductInCart
                       ? removeFromCart(product)
                       : addToCart(product)
                   }
                 >
-                  {isProductInCart ? <RemoveFromCartIcon /> : <AddToCartIcon />}
+                  {isProductInCart ? (
+                    <>
+                      <RemoveFromCartIcon />
+                      Remove
+                    </>
+                  ) : (
+                    <>
+                      <AddToCartIcon />
+                      Add to cart
+                    </>
+                  )}
                 </button>
               </footer>
             </li>
