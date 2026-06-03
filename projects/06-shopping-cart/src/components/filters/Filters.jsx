@@ -27,30 +27,47 @@ export function Filters ({ products }) {
 
     return (
         <section className='filters'>
-            <div>
-                <label htmlFor={minPriceFilterId}>Minimum Price:</label>
-                <input 
-                    type='range'
-                    id={minPriceFilterId}
-                    min='0'
-                    max='2000'
-                    onChange={handleChangeMinPrice}
-                    value={filters.minPrice}
-                />
-                <span>${filters.minPrice}</span>
-            </div>
+  <div className='filter-group'>
+    <label htmlFor={minPriceFilterId}>
+      Minimum Price:
+    </label>
 
-            <div>
-                <label htmlFor={categoryFilterId}>Category:</label>
-                <select id={categoryFilterId} onChange={handleChangeCategory} value={filters.category}>
-                    <option value='all'>All</option>
-                    {categories.map(category => (
-                        <option key={category} value={category}>
-                            {category}
-                        </option>
-                    ))}
-                </select>
-            </div>
-        </section>
+    <input
+      type='range'
+      id={minPriceFilterId}
+      min='0'
+      max='2000'
+      onChange={handleChangeMinPrice}
+      value={filters.minPrice}
+    />
+
+    <span className='filter-value'>
+      ${filters.minPrice}
+    </span>
+  </div>
+
+  <div className='filter-group'>
+    <label htmlFor={categoryFilterId}>
+      Sort by:
+    </label>
+
+    <select
+      id={categoryFilterId}
+      onChange={handleChangeCategory}
+      value={filters.category}
+    >
+      <option value='all'>Featured</option>
+
+      {categories.map(category => (
+        <option
+          key={category}
+          value={category}
+        >
+          {category}
+        </option>
+      ))}
+    </select>
+  </div>
+</section>
     )
 }
